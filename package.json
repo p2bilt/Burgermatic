@@ -16,10 +16,13 @@
     "url": "https://github.com/p2bilt/Burgermatic/issues"
   },
   "homepage": "https://github.com/p2bilt/Burgermatic#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
+"dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "mysql": "^2.10.2"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
   }
 }

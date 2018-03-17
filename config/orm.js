@@ -41,6 +41,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 const orm = {
+
   all: function(tableInput, cb) {
     const queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
@@ -50,6 +51,7 @@ const orm = {
       cb(result);
     });
   },
+
   create: function(table, cols, vals, cb) {
     let queryString = "INSERT INTO " + table;
 
@@ -70,7 +72,8 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+
+  // An example of objColVals would be {burger_name: panther, eaten: true}
   update: function(table, objColVals, condition, cb) {
     let queryString = "UPDATE " + table;
 
@@ -87,8 +90,14 @@ const orm = {
 
       cb(result);
     });
-  }
+  },
+
+  delete: (table, condition, cb) => {
+    const sql = `DELETE FROM ${table} WHERE ${condition};`
+    connection.query(sql, cb);
+}
+
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
