@@ -1,6 +1,6 @@
 // Set up MySQL connection.
 const mysql = require("mysql");
-const connection;
+var connection;
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -14,14 +14,6 @@ if (process.env.JAWSDB_URL) {
     });
 
 };
-
-
-const connection = mysql.createConnection({
-    host: "us-cdbr-iron-east-05.cleardb.net",
-    user: "b8c6fa9b781d46",
-    password: "dfb8a686",
-    database: "heroku_6cda3c09e407d86"
-});
 
 // Make connection.
 connection.connect((err) => {
